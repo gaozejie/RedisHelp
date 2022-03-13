@@ -1,4 +1,4 @@
-﻿using StackExchange.Redis;
+using StackExchange.Redis;
 using System;
 using System.Collections.Concurrent;
 using System.Configuration;
@@ -14,6 +14,7 @@ namespace RedisHelp
         public static readonly string SysCustomKey = ConfigurationManager.AppSettings["redisKey"] ?? "";
 
         //"127.0.0.1:6379,allowadmin=true
+        // ip1:端口,ip2:端口,password=密码,abortConnect=false,defaultDatabase=默认数据库0-16,ssl=false,ConnectTimeout=超时时间,allowAdmin=true,connectRetry=重试次数
         private static readonly string RedisConnectionString = ConfigurationManager.ConnectionStrings["RedisExchangeHosts"].ConnectionString;
 
         private static readonly object Locker = new object();
